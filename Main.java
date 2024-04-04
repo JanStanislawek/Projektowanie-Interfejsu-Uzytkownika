@@ -5,21 +5,19 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("wprowadź ilosć wierszy");
-        int w = (new Scanner(System.in)).nextInt();
-        System.out.println("wprowadź ilosć kolumn");
-        int k = (new Scanner(System.in)).nextInt();
-        int suma = 0;
-        int[][] tab = new int[w][k];
-        for(int i = 0; i < w; ++i) {
-            suma = 0;
-            for(int j = 0; j < k; ++j) {
-                System.out.print("tablica[" + i + "][" + j + "]= ");
-                tab[i][j] = (new Scanner(System.in)).nextInt();
-                suma += tab[i][j];
-            }
-            System.out.println(suma);
+        Scanner scan = new Scanner(System.in);
+        int liczba, suma = 0;
+        System.out.println("Podaj liczbę");
+        liczba = scan.nextInt();
+
+        for (int i = 1; i <liczba; i++) {
+            if (liczba % i == 0)
+                suma += i;
         }
-        System.out.println();
+        if (suma == liczba) {
+            System.out.println(liczba+" "+"jest liczbą doskonałą");
+        }
+        else
+            System.out.println(liczba+" "+"nie jest liczbą doskonałą");
     }
 }
