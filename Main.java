@@ -5,21 +5,22 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("wprowadź ilosć wierszy");
-        int w = (new Scanner(System.in)).nextInt();
-        System.out.println("wprowadź ilosć kolumn");
-        int k = (new Scanner(System.in)).nextInt();
-        int suma = 0;
-        int[][] tab = new int[w][k];
-        for(int i = 0; i < w; ++i) {
-            suma = 0;
-            for(int j = 0; j < k; ++j) {
-                System.out.print("tablica[" + i + "][" + j + "]= ");
-                tab[i][j] = (new Scanner(System.in)).nextInt();
-                suma += tab[i][j];
-            }
-            System.out.println(suma);
+        System.out.println("wprowadź boki trójkąta");
+	    int a = new Scanner(System.in).nextInt();
+        int b = new Scanner(System.in).nextInt();
+        int c = new Scanner(System.in).nextInt();
+        if ( a+b<c || a+c<b || c+b<a) {
+            System.out.println("brak trójkąta");
         }
-        System.out.println();
+            else if (a==b && b==c && c==a){
+                System.out.println("trójkąt równoboczny");
+        }
+            else if(a==b || b==c || a==c){
+                System.out.println("trójkąt równoramienny");
+        }
+            else{
+                System.out.println("trójkąt różnoboczny");
+        }
+
     }
 }
